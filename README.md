@@ -1,3 +1,2 @@
 # shingo-rabi
-
-a [Sails](http://sailsjs.org) application
+A web application to aid in the creation and management of Resource Allocation Board Items
