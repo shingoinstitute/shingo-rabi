@@ -1,13 +1,17 @@
 /**
  * Project.js
  *
- * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @description :: The project model holds many RABIs.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
 
   attributes: {
+
+    /*****************************
+     ****      ATTRIBUTES     ****
+     *****************************/
     title: {
       type: 'string'
     },
@@ -24,22 +28,30 @@ module.exports = {
       type: 'date'
     },
 
-    // Relationships
+    /*****************************
+     ****    RELATIONSHIPS    ****
+     *****************************/
+    // This role who has responsibility
+    // for this project
     owner: {
       model: 'role'
     },
 
+    // All items that belong
+    // to this project
     items: {
       collection: 'item',
       via: 'project'
     },
 
+    // The user who created
     createdBy: {
-      model: 'owner'
+      model: 'user'
     },
 
+    // The last user to modify
     lastModifiedBy: {
-      model: 'owner'
+      model: 'user'
     }
   }
 };

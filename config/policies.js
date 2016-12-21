@@ -21,31 +21,37 @@ module.exports.policies = {
 
   /***************************************************************************
   *                                                                          *
-  * Default policy for all controllers and actions (`true` allows public     *
-  * access)                                                                  *
+  * Default policy for all controllers and actions (`sessionAuth`            *
+  * allows authorized access)                                                *
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': 'sessionAuth',
 
   /***************************************************************************
   *                                                                          *
-  * Here's an example of mapping some policies to run before a controller    *
-  * and its actions                                                          *
+  * Policy for User and Role controllers is to have everything restricted    *
+  * admin users and the findAll is allowed for authenticated users           *
+  * ('sessionAuth' allows authorized access, 'isAdmin' allows admin access)  *
   *                                                                          *
   ***************************************************************************/
-	// RabbitController: {
+  UserController: {
+    '*': ['sessionAuth', 'isAdmin'],
+    findAll: ['sessionAuth']
+  },
 
-		// Apply the `false` policy as the default for all of RabbitController's actions
-		// (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
-		// '*': false,
+  RoleController: {
+    '*': ['sessionAuth', 'isAdmin'],
+    findAll: ['sessionAuth']
+  },
 
-		// For the action `nurture`, apply the 'isRabbitMother' policy
-		// (this overrides `false` above)
-		// nurture	: 'isRabbitMother',
+  /***************************************************************************
+  *                                                                          *
+  * Default policy for the auth controller (`true` allows public access)     *
+  *                                                                          *
+  ***************************************************************************/
+  AuthController: {
+    '*': true
+  }
 
-		// Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
-		// before letting any users feed our rabbits
-		// feed : ['isNiceToAnimals', 'hasRabbitFood']
-	// }
 };

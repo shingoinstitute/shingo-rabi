@@ -1,7 +1,7 @@
 /**
- * Role.js
+ * Group.js
  *
- * @description :: The role can correspond to departments. It allows for generalized ownership.
+ * @description :: This model is used to store groupings of RABIs.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
@@ -20,40 +20,22 @@ module.exports = {
       type: 'string'
     },
 
-    // The color of the
-    // printed RABI card
-    color: {
-      type: 'string'
-    },
-
     /*****************************
      ****    RELATIONSHIPS    ****
      *****************************/
-    // Users who belong to
-    // this role
-    users: {
-      collection: 'user',
-      via: 'role'
-    },
-
-    // Items this role owns
+    // Items that belong to
+    // this group
     items: {
       collection: 'item',
-      via: 'owner'
+      via: 'group'
     },
 
-    // Projects this role owns
-    projects: {
-      collection: 'project',
-      via: 'owner'
-    },
-
-    // The user to create
+    // User who created this group
     createdBy: {
       model: 'user'
     },
 
-    // The last user to modify
+    // The last user to modify this group
     lastModifiedBy: {
       model: 'user'
     }
