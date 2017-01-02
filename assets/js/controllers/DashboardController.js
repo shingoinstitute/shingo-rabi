@@ -29,7 +29,7 @@
     vm.loadProjects = function(){
       projects.read()
       .then(function(results){
-        vm.projects = results;
+        vm.projects = results.data;
       })
       .catch(function(err){
         if(err)
@@ -90,4 +90,4 @@
     // the controller is loaded
     vm.loadProjects();
   }
-})
+})();

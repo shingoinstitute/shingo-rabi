@@ -17,6 +17,15 @@
   ],
   "dependencies": {
     "angular-material": "^1.1.1",
-    "dragular": "^4.2.5"
+    "dragular": "^4.2.5",
+    "lodash": "^4.17.4",
+    "angular-route": "^1.6.1",
+    "angular-lodash": "^0.1.2",
+    "angular-sanitize": "^1.6.1",
+    "moment": "^2.17.1",
+    "angular-moment": "^1.0.1"
+  },
+  "resolutions": {
+    "lodash": "~2.4.1"
   }
 }

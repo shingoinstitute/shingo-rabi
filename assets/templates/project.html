@@ -1,0 +1,9 @@
+<div layout="column" ng-cloak="" ng-controller="ProjectController as vm">
+    <md-content layout-fill layout-padding layout-align="center center">
+        <h2>{{vm.project.title}}</h2>
+        <div class="column">
+            <div>{{vm.project.description}}</div>
+            <div>{{vm.project.startDate | amUtc | amDateFormat: 'MMM Do, YYYY'}} - {{vm.project.endDate | amUtc | amDateFormat: 'MMM Do, YYYY'}}</div>
+        </div>
+    </md-content>
+</div>

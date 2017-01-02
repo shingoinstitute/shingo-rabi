@@ -1,0 +1,15 @@
+<div layout="column" ng-cloak="" ng-controller="DashboardController as vm">
+    <md-content layout-fill layout-padding layout-align="center center">
+        <h2>Dashboard</h2>
+        <md-list>
+          <md-list-item class="md-2-line" ng-repeat="proj in vm.projects | orderBy: 'startDate'" ng-click="vm.go('/project/' + proj.id)">
+            <div class="md-list-item-text" layout="column">
+                <h3><b>{{proj.title}}</b> - {{proj.startDate | amUtc | amDateFormat: 'MMM Do, YYYY'}}</h3>
+                <h4>{{proj.description}}</h4>
+            </div>
+            <md-divider></md-divider>
+          </md-list-item>
+        </md-list>
+        <md-button aria-label="Add Project" ng-click="vm.addProject()"> Add Project </md-button>
+    </md-content>
+</div>

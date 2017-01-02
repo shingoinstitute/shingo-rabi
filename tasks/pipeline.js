@@ -17,7 +17,9 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+  'styles/**/*.css',
+  'bower_components/angular-material/angular-material.css',
+  'bower_components/dragular/dist/dragular.css'
 ];
 
 
@@ -26,14 +28,38 @@ var cssFilesToInject = [
 var jsFilesToInject = [
 
   // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+  // 'js/dependencies/sails.io.js',
 
   // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
+  // 'js/dependencies/**/*.js',
+  'bower_components/lodash/dist/lodash.js',
+  'bower_components/moment/moment.js',
+  'bower_components/angular/angular.js',
+  'bower_components/angular-route/angular-route.js',
+  'bower_components/angular-animate/angular-animate.js',
+  'bower_components/angular-aria/angular-aria.js',
+  'bower_components/angular-material/angular-material.js',
+  'bower_components/angular-messages/angular-messages.js',
+  'bower_components/angular-lodash/angular-lodash.js',
+  'bower_components/angular-sanitize/angular-sanitize.js',
+  'bower_components/angular-moment/angular-moment.js',
+  'bower_components/dragular/dist/dragular.js',
+
+  // Angular App
+  'js/app.js',
+
+  // Angular Controllers
+  'js/controllers/**/*.js',
+
+  // Angular Services
+  'js/services/**/*.js',
+
+  // Angular Directives
+  'js/directives/**/*.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  'js/**/*.js'
+  // 'js/**/*.js'
 ];
 
 
@@ -47,7 +73,7 @@ var jsFilesToInject = [
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-  'templates/**/*.html'
+  // 'templates/**/*.html'
 ];
 
 

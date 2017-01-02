@@ -1,0 +1,27 @@
+<md-dialog aria-label="Add Project">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span><b>Add Project</b></span>
+    </div>
+  </md-toolbar>
+  <form name="addProjectForm" ng-cloak="">
+    <md-dialog-content layout="column" layout-padding layout-align="center center" style="padding: 10px">
+      <md-input-container md-no-float layout-fill>
+        <input name="title" type="text" placeholder="Project Title" required ng-model="project.title">
+        <div ng-messages="addProjectForm.title.error" ng-show="addProjectForm.title.dirty">
+          <div ng-message="required">A project title is required!</div>
+        </div>
+      </md-input-container>
+      <md-input-container md-no-float layout-fill>
+        <textarea name="description" placeholder="Project Description" ng-model="project.description" ></textarea>
+      </md-input-container>
+      <div layout="row" layout-fill>
+        <md-datepicker name="startDate" ng-model="project.startDate" md-placeholder="Enter Start Date" required></md-datepicker>
+        <md-datepicker name="endDate" ng-model="project.endDate" md-placeholder="Enter End Date" required></md-datepicker>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions>
+      <md-button ng-click="answer()" ng-disabled="addProjectForm.$invalid" class="dialog-class" aria-label="Add">Add</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

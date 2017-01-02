@@ -1,11 +1,14 @@
 (function(){
   'use strict';
 
-  angular.module('ShingoRabi', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngSanitize', 'angularMoment', 'dragulaModule'])
+  angular.module('ShingoRabi', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngSanitize', 'angularMoment', 'dragularModule'])
   .config(function($routeProvider, $mdThemingProvider){
     $routeProvider
-    .when('/',{
+    .when('/', {
       templateUrl: 'templates/dashboard.html'
+    })
+    .when('/project/:id', {
+      templateUrl: 'templates/project.html'
     })
     .otherwise({
       redirectTo: '/'
