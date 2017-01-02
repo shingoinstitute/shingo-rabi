@@ -43,6 +43,7 @@
       if(!project.startDate) return false;
     }
 
+    // Copy a project
     function copy(otherProject){
       var project = angular.copy(otherProject);
       project.title += " (COPY)"
